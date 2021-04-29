@@ -147,7 +147,28 @@ const writeFileAsync = util.promisify(writeToFile);
 // TODO: Create a function to initialize app
 // Function to initialize program
 function init() {
+    // https://www.w3schools.com/js/js_errors.asp
+    try {
+        // Prompt Inquirer questions
+        const userResponses = await inquirer.prompt(questions);
+        console.log("Your responses: ", userResponses);
+        console.log("Your responses have been logged. Fetching your GitHub data...");
+    
+        // Call GitHub API for user info
+        const userInfo = await api.getUser(userResponses);
+        console.log("Your GitHub user info: ", userInfo);
+    
+        // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
+        console.log("Generating your README next...")
+        const markdown = generateMarkdown(userResponses, userInfo);
+        console.log(markdown);
+    
+        // Write markdown
+        await writeFileAsync('ExampleREADME.md', markdown);
 
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 // Function call to initialize app
