@@ -3,6 +3,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const util = require('util');
+const writeFileAsync = util.promisify(writeToFile);
 
 // Internal NPMs
 const api = require('./utils/api.js');
@@ -141,11 +142,7 @@ function writeToFile(fileName, data) {
     });
 }
 
-// Reference: https://www.npmjs.com/package/util.promisify
-const writeFileAsync = util.promisify(writeToFile);
-
-// TODO: Create a function to initialize app
-// Function to initialize program
+// TODO: Create a function to initialise app
 function init() {
     // https://www.w3schools.com/js/js_errors.asp
     try {
@@ -159,12 +156,13 @@ function init() {
         console.log("Your GitHub user info: ", userInfo);
     
         // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
-        console.log("Generating your README next...")
+        console.log("Generating your README next...");
         const markdown = generateMarkdown(userResponses, userInfo);
         console.log(markdown);
     
         // Write markdown
-        await writeFileAsync('ExampleREADME.md', markdown);
+        await writeFileAsync('./dist/README.md', markdown);
+        console.log('✔️  Successfully wrote to README.md');
 
     } catch (error) {
         console.log(error);
