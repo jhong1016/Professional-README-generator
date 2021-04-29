@@ -16,6 +16,7 @@ const questions = [
         type: 'input',
         name: 'title',
         message: 'What is the project title?',
+        default: 'Project Title',
         // We need to validate that user entered at least one word
         validate: function (answer) {
             if (answer.length < 1) {
@@ -29,6 +30,7 @@ const questions = [
         type: 'input',
         name: 'description',
         message: 'What is the project description?',
+        default: 'Project Description',
         // We need to validate that user entered at least one word
         validate: function (answer) {
             if (answer.length < 1) {
@@ -44,11 +46,39 @@ const questions = [
         message: 'What are the contents?',
         choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions']
     },
-    // Project Installation
+    // Installation Instructions
     {
         type: 'input',
         name: 'installation',
-        message: 'What are the user installation instructions?',
+        message: 'Describe the steps required to insall the project for the Installation section (if applicable).',
+        // Validation not required if question is optional
+    },
+    // Usage Information
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Enter your project instructions and examples of it in use for Usage Section.',
+    },
+    // License
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Choose your license for your project.',
+        // https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/licensing-a-repository
+        choices: ['afl-3.0', 'apache-2.0', 'artistic-2.0', 'bsl-1.0', 'bsd-2-clause', 'bsd-3-clause', 'bsd-3-clause-clear', 'cc', 'cc0-1.0', 'cc-by-4.0', 'cc-by-sa-4.0', 'wtfpl', 'ecl-2.0', 'epl-1.0', 'epl-2.0', 'eupl-1.1', 'agpl-3.0', 'gpl', 'gpl-2.0', 'gpl-3.0', 'lgpl', 'lgpl-2.1', 'lgpl-3.0', 'isc', 'lppl-1.3c', 'ms-pl', 'mit', 'mpl-2.0', 'osl-3.0', 'postgresql', 'ofl-1.1', 'ncsa', 'unlicense', 'zlib']
+    },
+    // Contribution Guidelines
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Explain how users can contribute to your project (if necessary).',
+        // Validation not required if question is optional
+    },
+    // Test Instructions
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Provide tests for project, and explain how to test (if necessary).',
         // Validation not required if question is optional
     },
 ];
