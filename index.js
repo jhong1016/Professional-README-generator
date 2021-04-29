@@ -44,7 +44,13 @@ const questions = [
         message: 'What are the contents?',
         choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions']
     },
-    
+    // Project Installation
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'What are the user installation instructions?',
+        // Validation not required if question is optional
+    },
 ];
 
 // TODO: Create a function to write README file
