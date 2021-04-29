@@ -56,7 +56,7 @@ Check out the sample `README.md` file in "utils" folder as an example.
 ## Generated-README-Example:
 *Screenshot of generated README file from the walk through video*
 
-![Screenshot](https://github.com/jhong1016/jinhong-portfolio/blob/main/assets/images/screenshot.jpg)
+![Screenshot](https://github.com/jhong1016/Professional-README-generator/blob/main/utils/Screenshot%20of%20example%20README.JPG)
 
 ## Contribution
 If you would like to contribute to this project reach out to me. Contact Information can be found below or by clicking on the 'Contact-Information' link provided in the Table of Contents.
