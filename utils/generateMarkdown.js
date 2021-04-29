@@ -1,130 +1,53 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+// Function to generate markdown for README
+function generateMarkdown(data) {
+  // returns inquirer prompted data. Writing in markdown inside backticks and using data to personalize markdown page.
+  return `# ${data.title}
+----
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+<a href="https://img.shields.io/badge/License-${data.license[0]}-brightgreen"><img src="https://img.shields.io/badge/License-${data.license[0]}-brightgreen"></a>
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Test Instructions](#test-instructions)
+- [Questions](#questions?)
+- [Questions?]()
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(userResponses, userInfo) {
+### Description
+${data.description}
 
-    // Generate Table of Contents conditionally based on userResponses
-    let draftToC = `## Table of Contents`;
+### Installation
+*Steps required to install project and how to get the development environment running:*
 
-    if (userResponses.installation !== '') { draftToC += `
-    * [Installation](#installation)` };
-  
-    if (userResponses.usage !== '') { draftToC += `
-    * [Usage](#usage)` };
-  
-    if (userResponses.contributing !== '') { draftToC += `
-    * [Contributing](#contributing)` };
-  
-    if (userResponses.tests !== '') { draftToC += `
-    * [Tests](#tests)` };
-    
-    // Generate markdown for the top required portions of the README
-    let draftMarkdown = 
-    `# ${userResponses.title}
-    ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor) 
-    ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor)
-    
-    Check out the badges hosted by [shields.io](https://shields.io/).
-    
-    ## Description 
-    ${userResponses.description}
-    `
+${data.installation}
 
-    // Add Table of Contents to markdown
-    draftMarkdown += draftToC;
-    
-    // Add License section since License is required to Table of Contents
-    draftMarkdown += `
-    * [License](#license)`;
+### Usage
+*Instructions and examples for use:*
 
-    // Optional Installation section
-    if (userResponses.installation !== '') {
-    draftMarkdown +=
-    `
-    
-    ## Installation
-    *Steps required to install project and how to get the development environment running:*
-    
-    ${userResponses.installation}`
-    };
-  
-    // Optional Usage section
-    if (userResponses.usage !== '') {
-    draftMarkdown +=
-    `
-    
-    ## Usage 
-    *Instructions and examples for use:*
-    
-    ${userResponses.usage}`
-    };
-    
-    // Optional Contributing section
-    if (userResponses.contributing !== '') {
-    `
-    
-    ## Contributing
-    *If you would like to contribute, you can follow these guidelines for how to do so.*
-    
-    ${userResponses.contributing}`
-    };
-    
-    // Optional Tests section
-    if (userResponses.tests !== '') {
-    draftMarkdown +=
-    `
-    
-    ## Tests
-    *Tests for application and how to run them:*
-    
-    ${userResponses.tests}`
-    };
-    
-    // License section is required
-    draftMarkdown +=
-    `
+${data.usage}
 
-    ## License    
-    ${userResponses.license}
-    `;
-  
-    // Questions / About Developer section
-    let draftDev = 
-    `
-    ---
+### Contribution
+*If you would like to contribute, you can follow these guidelines for how to do so.*
+
+${data.contribution}
+
+### Test-Instructions
+*Tests for application and how to run them:*
+
+${data.tests}
+
+### Questions?
+*For any questions, please contact me with the information below:*
+
+[Github Profile](https://github.com/${data.username})
+[Email]${data.email}
+
+---
     
-    ## Questions?
-    
-    For any questions, please contact me with the information below:
-   
-    GitHub: [@${userInfo.login}](${userInfo.url})
-    `;
-  
-    // If GitHub email is not null, add to Developer section
-    if (userInfo.email !== null) {
-    
-    draftDev +=
-    `
-    Email: ${userInfo.email}
-    `};
-  
-    // Add developer section to markdown
-    draftMarkdown += draftDev;
-  
-    // Return markdown
-    return draftMarkdown;
-    
-  }
+`;
+}
 
 // Function exporting generateMarkdown function
 module.exports = generateMarkdown;

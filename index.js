@@ -1,22 +1,20 @@
-// TODO: Include packages needed for this application
 // External packages
 const fs = require('fs');
 const inquirer = require('inquirer');
-const util = require('util');
-const writeFileAsync = util.promisify(writeToFile);
+const path = require('path');
 
-// Internal NPMs
-const api = require('./utils/api.js');
+// Internal NPM
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
 // Inquirer prompts for user reponses
-const questions = [
+function init() {
+    // Inquirer prompted questions for user
+    inquirer.prompt([
     // GitHub Username
     {
         type: 'input',
         name: 'username',
-        message: 'What is your Github username? (No "@" needed)',
+        message: 'What is your Github username?',
         // We need to validate that user entered at least one word
         // https://stackoverflow.com/questions/57321266/how-to-test-inquirer-validation
         validate: function (answer) {
@@ -38,6 +36,18 @@ const questions = [
             }
             return true;
         } 
+    },
+    // Email Address
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?',
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("You must enter a valid email address.");
+            }
+            return true;
+        }
     },
     // Title of Project
     {
@@ -112,44 +122,19 @@ const questions = [
             "Mozilla Public 2.0",
             "The Unilicense",
         ]
-    },
-];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        if (err) {
-          return console.log(err);
-        }
-        console.log("Success! Your README.md file has been generated.")
-    });
-}
-
-// TODO: Create a function to initialise app
-async function init() {
-    try {
-        // Write new README.md to dist directory
-        // Prompt Inquirer questions
-        const userResponses = await inquirer.prompt(questions);
-        console.log("Your responses: ", userResponses);
-        console.log("Your responses have been logged. Fetching your GitHub data...");
-    
-        // Call GitHub API for user info
-        const userInfo = await api.getUser(userResponses);
-        console.log("Your GitHub user info: ", userInfo);
-    
-        // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
-        console.log("Generating your README...");
-        const markdown = generateMarkdown(userResponses, userInfo);
-        console.log(markdown);
-
-        // Write markdown
-        await writeFileAsync('ExampleREADME.md', markdown);
-        console.log('✔️  Successfully wrote to README.md');
-
-    } catch (error) {
-        console.log(error);
     }
+    // Where the user input is stored (data)
+    ]).then(function(data) {
+        // message for the user
+        console.log("Generating your README...");
+        // calling function writeToFile(fileName, data) using "README.md" and generateMarkdown(data) parameters & uses a spread opperater to spread data. 
+        writeToFile("ExampleREADME.md", generateMarkdown({...data}));  
+  });
+} 
+
+// Function to write README file takes in fileName and user data parameters
+function writeToFile(fileName, data) {
+    fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
 // Function call to initialize app
