@@ -24,7 +24,6 @@ const questions = [
             return true;
         }   
     },
-
     // Project Description
     {
         type: 'input',
@@ -38,6 +37,14 @@ const questions = [
             return true;
         }
     },
+    // Table of Contents
+    {
+        type: 'checkbox',
+        name: 'table',
+        message: 'What are the contents?',
+        choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions']
+    },
+    
 ];
 
 // TODO: Create a function to write README file
