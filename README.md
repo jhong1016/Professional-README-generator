@@ -51,12 +51,12 @@ Choose a license for the project.
 
 Once you have answered all the questions a markdown page will be generated for you!
 It will be named `README.md`.
-Check out the example `README.md` file in "utils" folder as an example.
+Check out the sample `README.md` file in "utils" folder as an example.
 
 ## Generated-README-Example:
-*Terminal picture from above was used to create the README below*
+*Screenshot of generated README file from the walk through video*
 
-![exampleREADME](https://media.giphy.com/media/qmuwr2XrtbrWYxYjmz/giphy.gif)
+![Screenshot](https://github.com/jhong1016/jinhong-portfolio/blob/main/assets/images/screenshot.jpg)
 
 ## Contribution
 If you would like to contribute to this project reach out to me. Contact Information can be found below or by clicking on the 'Contact-Information' link provided in the Table of Contents.
