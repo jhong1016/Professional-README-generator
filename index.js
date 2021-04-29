@@ -11,15 +11,29 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 // Inquirer prompts for user reponses
 const questions = [
-// Title of Project
+    // Title of Project
     {
         type: 'input',
         name: 'title',
-        message: 'What is your project title?',
+        message: 'What is the project title?',
         // We need to validate that user entered at least one word
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("You must enter the title of your project.");
+            }
+            return true;
+        }   
+    },
+
+    // Project Description
+    {
+        type: 'input',
+        name: 'description',
+        message: 'What is the project description?',
+        // We need to validate that user entered at least one word
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("You must enter a description for your project.");
             }
             return true;
         }
