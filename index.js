@@ -24,19 +24,6 @@ function init() {
             return true;
         }
     },
-    // GitHub Repository
-    {
-        type: 'input',
-        name: 'repository',
-        message: 'Enter the name of your repository on GitHub.',
-        // We need to validate that user entered at least one word
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("You must enter a valid GitHub repository.");
-            }
-            return true;
-        } 
-    },
     // Email Address
     {
         type: 'input',
@@ -79,7 +66,7 @@ function init() {
     {
         type: 'input',
         name: 'installation',
-        message: 'Describe the steps required to insall the project for the Installation section (if applicable).',
+        message: 'Describe the steps required to install the project for the Installation section (if applicable).',
         // Validation not required if question is optional
     },
     // Usage Information
@@ -104,7 +91,7 @@ function init() {
     },
     // License
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'Choose a license for the project.',
         choices: [
