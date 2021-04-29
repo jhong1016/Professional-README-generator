@@ -11,7 +11,19 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 // Inquirer prompts for user reponses
 const questions = [
-
+// Title of Project
+    {
+        type: 'input',
+        name: 'title',
+        message: 'What is your project title?',
+        // We need to validate that user entered at least one word
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("You must enter the title of your project.");
+            }
+            return true;
+        }
+    },
 ];
 
 // TODO: Create a function to write README file
