@@ -57,29 +57,58 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'Enter your project instructions and examples of it in use for Usage Section.',
-    },
-    // License
-    {
-        type: 'list',
-        name: 'license',
-        message: 'Choose your license for your project.',
-        // https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/licensing-a-repository
-        choices: ['afl-3.0', 'apache-2.0', 'artistic-2.0', 'bsl-1.0', 'bsd-2-clause', 'bsd-3-clause', 'bsd-3-clause-clear', 'cc', 'cc0-1.0', 'cc-by-4.0', 'cc-by-sa-4.0', 'wtfpl', 'ecl-2.0', 'epl-1.0', 'epl-2.0', 'eupl-1.1', 'agpl-3.0', 'gpl', 'gpl-2.0', 'gpl-3.0', 'lgpl', 'lgpl-2.1', 'lgpl-3.0', 'isc', 'lppl-1.3c', 'ms-pl', 'mit', 'mpl-2.0', 'osl-3.0', 'postgresql', 'ofl-1.1', 'ncsa', 'unlicense', 'zlib']
+        message: 'Provide instructions and examples of the project in use for the Usage Section.',
     },
     // Contribution Guidelines
     {
         type: 'input',
         name: 'contributing',
-        message: 'Explain how users can contribute to your project (if necessary).',
+        message: 'Explain how users can contribute to your project (if applicable).',
         // Validation not required if question is optional
     },
     // Test Instructions
     {
         type: 'input',
         name: 'tests',
-        message: 'Provide tests for project, and explain how to test (if necessary).',
+        message: 'Provide any tests written for the project, and explain how to test (if applicable).',
         // Validation not required if question is optional
+    },
+    // License
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Choose a license for the project.',
+        // https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/licensing-a-repository
+        choices: ['afl-3.0', 'apache-2.0', 'artistic-2.0', 'bsl-1.0', 'bsd-2-clause', 'bsd-3-clause', 'bsd-3-clause-clear', 'cc', 'cc0-1.0', 'cc-by-4.0', 'cc-by-sa-4.0', 'wtfpl', 'ecl-2.0', 'epl-1.0', 'epl-2.0', 'eupl-1.1', 'agpl-3.0', 'gpl', 'gpl-2.0', 'gpl-3.0', 'lgpl', 'lgpl-2.1', 'lgpl-3.0', 'isc', 'lppl-1.3c', 'ms-pl', 'mit', 'mpl-2.0', 'osl-3.0', 'postgresql', 'ofl-1.1', 'ncsa', 'unlicense', 'zlib']
+    },
+    // GitHub Username
+    {
+        type: 'input',
+        name: 'username',
+        message: 'What is your Github username? (No "@" needed)',
+        default: 'jinhong-dev',
+        // We need to validate that user entered at least one word
+        // https://stackoverflow.com/questions/57321266/how-to-test-inquirer-validation
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("You must enter a valid GitHub username.");
+            }
+            return true;
+        }
+    },
+    // GitHub Repository
+    {
+        type: 'input',
+        name: 'repository',
+        message: 'Enter the name of your repository on GitHub.',
+        default: 'README-generator',
+        // We need to validate that user entered at least one word
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("You must enter a valid GitHub repository.");
+            }
+            return true;
+        } 
     },
 ];
 
