@@ -104,23 +104,15 @@ function init() {
     },
     // License
     {
-        type: 'list',
+        type: 'checkbox',
         name: 'license',
         message: 'Choose a license for the project.',
-        // https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/licensing-a-repository
         choices: [
-            "None",
-            "Apache2.0",
-            "GNU Public v3.0",
-            "MIT",
-            "Boost Software 1.0",
-            "Creative Commons Zero v1.0 Universal",
-            "Eclipse Public 2.0",
-            "GNU Affero General Public v3.0",
-            "GNU General Public v2.0",
-            "GNU Lesser General Public v2.1",
-            "Mozilla Public 2.0",
-            "The Unilicense",
+            'Apache2.0',
+            'GNU Public v3.0',
+            'MIT',
+            'Boost Software 1.0',
+            'Mozilla Public 2.0',
         ]
     }
     // Where the user input is stored (data)
