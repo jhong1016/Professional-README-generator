@@ -1,6 +1,8 @@
 # Professional README Generator
 ----
 
+<a href="https://img.shields.io/badge/JavaScipt-100%25-yellow"><img alt="JavaScript use" src="https://img.shields.io/badge/JavaScipt-100%25-yellow"></a> <a href="https://img.shields.io/badge/Used-Node.js-red"><img alt="Node.js use" src="https://img.shields.io/badge/Used-Node.js-red"></a> <a href="https://img.shields.io/badge/npm-Inquirer-orange"><img alt="npm package Inquirer" src="https://img.shields.io/badge/npm-Inquirer-orange"></a>
+
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
@@ -9,7 +11,7 @@
 - [Contribution](#contribution)
 - [Test Instructions](#test-instructions)
 - [Licences](#licences)
-- [Questions?](#questions?)
+- [Questions](#questions)
 
 ## Description
 A `README.md` file is the place where a project creator communicates with future users and explains how their project works. Having a great `README.md` file is crucial to your projects future success. If you've ever written a `README.md` file you know that creating one can be considerably time consuming!
@@ -29,6 +31,10 @@ Save yourself time by using this README-Generator that will create a `README.md`
 - Follow the prompt
 
 ## Usage
+*Walk through demo and example for use:*
+
+![exampleREADME](.utils\Walk through demo.gif)
+
 Answer the prompt questions: _click enter to move to the next question._
 
 ```
@@ -45,6 +51,7 @@ Choose a license for the project.
 
 Once you have answered all the questions a markdown page will be generated for you!
 It will be named `README.md`.
+Check out the example `README.md` file in "utils" folder as an example.
 
 ## Generated-README-Example:
 *Terminal picture from above was used to create the README below*
@@ -62,7 +69,7 @@ run: npm run test
 
 <a href="https://img.shields.io/badge/License-MIT-brightgreen"><img alt="M.I.T. License use" src="https://img.shields.io/badge/License-MIT-brightgreen"></a>
 
-## Questions?
+## Questions
 
 [Github Profile](https://github.com/jhong1016)
 
