@@ -1,43 +1,71 @@
-# why
+# Professional README Generator
 ----
-
-<a href="https://img.shields.io/badge/License-M-brightgreen"><img src="https://img.shields.io/badge/License-M-brightgreen"></a>
 
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Generated-README-Example](#generated-readme-example)
 - [Contribution](#contribution)
 - [Test Instructions](#test-instructions)
-- [Contact Information](#contact-information)
-- [Questions?]()
+- [Licences](#licences)
+- [Questions?](#questions?)
 
-### Description
-he
+## Description
+A `README.md` file is the place where a project creator communicates with future users and explains how their project works. Having a great `README.md` file is crucial to your projects future success. If you've ever written a `README.md` file you know that creating one can be considerably time consuming!
 
-### Installation
-*Steps required to install project and how to get the development environment running:*
-she
+Save yourself time by using this README-Generator that will create a `README.md` file for you! Simply follow the directions below for information on how to use.
 
-### Usage
-*Instructions and examples for use:*
-me
+## Installation
 
-### Contribution
-*If you would like to contribute, you can follow these guidelines for how to do so.*
-undefined
+###### ATTENTION: Node.js installation is required prior to use!
 
-### Test-Instructions
-*Tests for application and how to run them:*
-yes
+- Open the Terminal
+- Clone the repo: `git@github.com:________________________________________________________`
+- 'cd' into new directory (must be in directory to work) EX. `cd README-Generator`
+- Again into Develop folder `cd Develop`
+- Download Inquirer package by entering `npm i`
+- Enter `node index.js`
+- Follow the prompt
 
-### Contact-Information
-[Github Profile](https://github.com/jhong)
-undefined
+## Usage
+Answer the prompt questions: _click enter to move to the next question._
+
+```
+What is your Github username?
+What is your email address?
+What is the project title?
+What is the project description?
+Describe the steps required to install the project for the Installation section (if applicable).
+Provide instructions and examples of the project in use for the Usage Section.
+Explain how users can contribute to your project (if applicable).
+Provide any tests written for the project, and explain how to test (if applicable).
+Choose a license for the project.
+```
+
+Once you have answered all the questions a markdown page will be generated for you!
+It will be named `README.md`.
+
+## Generated-README-Example:
+*Terminal picture from above was used to create the README below*
+
+![exampleREADME](https://media.giphy.com/media/qmuwr2XrtbrWYxYjmz/giphy.gif)
+
+## Contribution
+If you would like to contribute to this project reach out to me. Contact Information can be found below or by clicking on the 'Contact-Information' link provided in the Table of Contents.
+
+## Test-Instructions
+
+run: npm run test
+
+## Licences 
+
+<a href="https://img.shields.io/badge/License-MIT-brightgreen"><img alt="M.I.T. License use" src="https://img.shields.io/badge/License-MIT-brightgreen"></a>
+
+## Questions?
+
+[Github Profile](https://github.com/jhong1016)
+
+[Email](jnhg1016@gmail.com)
 
 ---
-    
-## Questions?
-For any questions, please contact me with the information below: 
-GitHub: [@undefined](undefined)
-   

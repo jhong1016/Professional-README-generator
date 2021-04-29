@@ -107,7 +107,7 @@ function init() {
         // message for the user
         console.log("Generating your README...");
         // calling function writeToFile(fileName, data) using "README.md" and generateMarkdown(data) parameters & uses a spread opperater to spread data. 
-        writeToFile("ExampleREADME.md", generateMarkdown({...data}));  
+        writeToFile("utils/README.md", generateMarkdown({...data}));  
   });
 } 
 
