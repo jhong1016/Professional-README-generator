@@ -17,7 +17,6 @@ const questions = [
         type: 'input',
         name: 'username',
         message: 'What is your Github username? (No "@" needed)',
-        default: 'jinhong-dev',
         // We need to validate that user entered at least one word
         // https://stackoverflow.com/questions/57321266/how-to-test-inquirer-validation
         validate: function (answer) {
@@ -32,7 +31,6 @@ const questions = [
         type: 'input',
         name: 'repository',
         message: 'Enter the name of your repository on GitHub.',
-        default: 'README-generator',
         // We need to validate that user entered at least one word
         validate: function (answer) {
             if (answer.length < 1) {
@@ -46,7 +44,6 @@ const questions = [
         type: 'input',
         name: 'title',
         message: 'What is the project title?',
-        default: 'Project Title',
         // We need to validate that user entered at least one word
         validate: function (answer) {
             if (answer.length < 1) {
@@ -60,7 +57,6 @@ const questions = [
         type: 'input',
         name: 'description',
         message: 'What is the project description?',
-        default: 'Project Description',
         // We need to validate that user entered at least one word
         validate: function (answer) {
             if (answer.length < 1) {
@@ -68,13 +64,6 @@ const questions = [
             }
             return true;
         }
-    },
-    // Table of Contents
-    {
-        type: 'checkbox',
-        name: 'table',
-        message: 'What are the contents?',
-        choices: ['Installation', 'Usage', 'Contributing', 'Tests', 'License', 'Questions']
     },
     // Installation Instructions
     {
@@ -124,12 +113,6 @@ const questions = [
             "The Unilicense",
         ]
     },
-    // Questions
-    {
-        type: 'input',
-        name: 'questions',
-        message: 'Do you have any questions?',
-    }
 ];
 
 // TODO: Create a function to write README file
@@ -143,9 +126,9 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialise app
-function init() {
-    // https://www.w3schools.com/js/js_errors.asp
+async function init() {
     try {
+        // Write new README.md to dist directory
         // Prompt Inquirer questions
         const userResponses = await inquirer.prompt(questions);
         console.log("Your responses: ", userResponses);
@@ -156,12 +139,12 @@ function init() {
         console.log("Your GitHub user info: ", userInfo);
     
         // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
-        console.log("Generating your README next...");
+        console.log("Generating your README...");
         const markdown = generateMarkdown(userResponses, userInfo);
         console.log(markdown);
-    
+
         // Write markdown
-        await writeFileAsync('./dist/README.md', markdown);
+        await writeFileAsync('ExampleREADME.md', markdown);
         console.log('✔️  Successfully wrote to README.md');
 
     } catch (error) {
