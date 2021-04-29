@@ -23,7 +23,7 @@ Save yourself time by using this README-Generator that will create a `README.md`
 ###### ATTENTION: Node.js installation is required prior to use!
 
 - Open the Terminal
-- Clone the repo: `git@github.com:________________________________________________________`
+- Clone the repo: `git@github.com:jhong1016/Professional-README-generator.git`
 - 'cd' into new directory (must be in directory to work) EX. `cd README-Generator`
 - Again into Develop folder `cd Develop`
 - Download Inquirer package by entering `npm i`
