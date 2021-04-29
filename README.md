@@ -31,11 +31,8 @@ Save yourself time by using this README-Generator that will create a `README.md`
 - Follow the prompt
 
 ## Usage
-*Walk through demo and example for use:*
-
-![exampleREADME](.utils\Walk through demo.gif)
-
-Answer the prompt questions: _click enter to move to the next question._
+Answer the prompt questions: 
+_click enter to move to the next question._
 
 ```
 What is your Github username?
