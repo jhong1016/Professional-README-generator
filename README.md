@@ -53,6 +53,10 @@ Once you have answered all the questions a markdown page will be generated for y
 It will be named `README.md`.
 
 ## Generated-README-Example:
+*Link to walk through video:*
+
+https://drive.google.com/file/d/1PzIctkSHDKI_43GHlwxzSyktlm1Y6_lr/view?usp=sharing
+
 Check out the sample `README.md` file in the "utils" folder as shown in the walk through video as an example.
 
 *Screenshot of the sample [`README.md`]:*
